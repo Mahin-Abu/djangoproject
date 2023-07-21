@@ -1,0 +1,24 @@
+body
+{
+background-color:light
+font-family: 'Poppins', sans-serif;
+}
+.btn-outline-success {
+    color: #000000;
+    border-color: #000000;
+}
+
+#FOOTER
+.footer
+{
+width:100px;
+height:60px;
+background-color:light;
+}
+
+
+#CART
+.table.table-bordered
+{
+border-color:black;
+}

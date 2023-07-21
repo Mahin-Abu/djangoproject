@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div><img src="{% static 'img/banner.jpg' %}" height="500px" width="100%">
+</div>
+<div class="container-fluid" style="margin-bottom:100px;">
+    <h1 class="text-center">OUR COLLECTIONS</h1>
+    <p class="text-align:justify;">Discover an unparalleled online shopping experience at our cutting-edge ecommerce website. We bring you a vast and diverse collection of products, exceptional customer service, and a user-friendly interface that will make your shopping journey a breeze. Browse through our extensive product catalog, carefully curated to cater to your every need. From fashion and accessories to electronics, home decor, beauty products, and more, we have everything you're looking for, all in one convenient place. Our intuitive search and filtering system allows you to find exactly what you're looking for, with options to refine your search by category, brand, price range, and customer ratings. Say goodbye to endless scrolling and wasted time, and say hello to a seamless shopping experience.Discover personalized recommendations tailored to your unique tastes and preferences. Our intelligent recommendation engine analyzes your browsing and purchase history to suggest items you're likely to love. Get ready to be pleasantly surprised by new and exciting finds.</p>
+</div>
+
+<div class="container-fluid" style="margin-bottom:100px;">
+    <div class="row">
+        {% for i in c %}
+        <div class="col-sm-4">
+            <div class="card" style="">
+                <img src="{{i.image.url}}" height="250px" width="100%" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{i.name}}</h5>
+
+                    <a href="{% url 'shop:allproducts' i.slug %}" class="btn btn-primary" style="position:relative;left:38%;">PRODUCTS</a>
+                </div>
+            </div>
+        </div>
+             {% endfor %}
+    </div>
+</div>
+{% endblock %}
